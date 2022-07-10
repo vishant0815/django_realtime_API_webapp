@@ -1,1 +1,0 @@
-web: gunicorn gtu.wsgi --log-file -
