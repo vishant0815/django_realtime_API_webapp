@@ -1,0 +1,83 @@
+<footer>
+  {% load static %}
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="border-top"></div>
+        </div>
+        <div class="col-sm-3 col-lg-3">
+          <ul class="footer-vertical-nav">
+            <li class="menu-title"><h2>News</h2></li>
+            <li><a href="{% url 'indexfile' %}">Home</a></li>
+            <li><a href="{% url 'worldfile' %}">World</a></li>
+            <li><a href="{% url 'startupfile' %}">Startup</a></li>
+            <li><a href="{% url 'technologyfile' %}">Technology</a></li>
+            <li><a href="{% url 'businessfile' %}">Business</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3 col-lg-3">
+          <ul class="footer-vertical-nav">
+            <li class="menu-title"><h2>News</h2></li>
+            <li><a href="{% url 'sportsfile' %}">Sports</a></li>
+            <li><a href="{% url 'entertainmentfile' %}">Entertainment</a></li>
+            <li><a href="{% url 'politicsfile' %}">Politics</a></li>
+            <li><a href="{% url 'automobilefile' %}">Automobile</a></li>
+            <li><a href="{% url 'travelfile' %}">Travel</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3 col-lg-3"></div>
+        <div class="col-sm-3 col-lg-3">
+          <ul class="footer-vertical-nav">
+            <li><a href="{% url 'aboutusfile' %}">About us</a></li>
+            <li><a href="{% url 'contactusfile' %}">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="d-flex justify-content-between">
+            <ul>
+
+            </ul>
+            <div class="d-flex justify-content-end footer-social">
+              <h5 class="m-0 font-weight-600 mr-3 d-none d-lg-flex">Follow on</h5>
+              <ul class="social-media">
+                <li>
+                  <a href="#">
+                    <i class="mdi mdi-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="mdi mdi-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="mdi mdi-youtube"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="mdi mdi-linkedin"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="mdi mdi-twitter"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="d-lg-flex justify-content-between align-items-center border-top mt-5 footer-bottom">
+            <ul class="footer-horizontal-menu"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</footer>

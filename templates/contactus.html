@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>News</title>
+    {% load static %}
+    <!-- plugin css for this page -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="{% static 'vendors/mdi/css/materialdesignicons.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'vendors/aos/dist/aos.css/aos.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'vendors/owl.carousel/dist/assets/owl.carousel.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'vendors/owl.carousel/dist/assets/owl.theme.default.min.css' %}"
+    />
+    <!-- End plugin css for this page -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- endinject -->
+  </head>
+
+  <body>
+    <div class="container-scroller">
+      <div class="main-panel">
+        <header id="header">
+          <div class="container">
+            <!-- partial:partials/_navbar.html -->
+            <nav class="navbar navbar-expand-xl navbar-light">
+              <div class="d-flex justify-content-between align-items-center navbar-top">
+                <ul class="navbar-left">
+                  <li>
+                    {% now "jS F Y H:i" %}
+                  </li>
+                </ul>
+                <div>
+                  <ul class="font-weight-bold mt-3">
+                    <h1>NEWS</h1>
+                  </ul>
+                </div>
+                <div class="d-flex">
+                  <ul class="social-media">
+                    <li>
+                      <a href="#">
+                        <i class="mdi mdi-instagram"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="mdi mdi-facebook"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="mdi mdi-youtube"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="mdi mdi-linkedin"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="mdi mdi-twitter"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="navbar-bottom-menu">
+                <div
+                  class="navbar-collapse justify-content-center collapse"
+                  id="navbarSupportedContent"
+                >
+                  <ul class="navbar-nav" >
+                    <li class="nav-item active">
+                      <a class="nav-link active" href="{% url 'indexfile' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'worldfile' %}">World</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'startupfile' %}">Startup</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'technologyfile' %}">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'businessfile' %}">Business</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'sportsfile' %}">Sports</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'entertainmentfile' %}">Entertainment</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'politicsfile' %}">Politics</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'automobilefile' %}">Automobile</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'travelfile' %}">Travel</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <!-- partial -->
+          </div>
+        </header>
+        <div class="container">
+          <div class="world-news">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="text-center">
+                  <h1 class="text-center mt-5">
+                    All News
+                  </h1>
+                </div>
+                <div class="d-flex position-relative  float-left">
+                  <h3 class="section-title">All News</h3>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+             {% for value in alldata.data %}
+              <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
+                <div class="position-relative image-hover">
+                  <img
+                    src="{{ value.imageUrl }}"
+                    class="img-fluid"
+                    alt="world-news"
+                  />
+                </div>
+                <h5 class="font-weight-bold mt-3">
+                  {{ value.title }}
+                </h5>
+                <p class="fs-15 font-weight-normal">
+                  {{value.content }}
+                </p>
+                <p class="fs-15 font-weight-normal">
+                  {{value.date }}
+                </p>
+                <a href="{{ value.readMoreUrl }}" class="font-weight-bold text-dark pt-2"
+                  >Read Article</a
+                >
+              </div>
+             {% endfor %}
+            </div>
+          </div>
+        </div>
+        <!-- main-panel ends -->
+        <!-- container-scroller ends -->
+
+        <!-- partial:partials/_footer.html -->
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="border-top"></div>
+              </div>
+              <div class="col-sm-3 col-lg-3">
+                <ul class="footer-vertical-nav">
+                  <li class="menu-title"><h2>News</h2></li>
+                  <li><a href="{% url 'indexfile' %}">Home</a></li>
+                  <li><a href="{% url 'worldfile' %}">World</a></li>
+                  <li><a href="{% url 'startupfile' %}">Startup</a></li>
+                  <li><a href="{% url 'technologyfile' %}">Technology</a></li>
+                  <li><a href="{% url 'businessfile' %}">Business</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-3 col-lg-3">
+                <ul class="footer-vertical-nav">
+                  <li class="menu-title"><h2>News</h2></li>
+                  <li><a href="{% url 'sportsfile' %}">Sports</a></li>
+                  <li><a href="{% url 'entertainmentfile' %}">Entertainment</a></li>
+                  <li><a href="{% url 'politicsfile' %}">Politics</a></li>
+                  <li><a href="{% url 'automobilefile' %}">Automobile</a></li>
+                  <li><a href="{% url 'travelfile' %}">Travel</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-3 col-lg-3"></div>
+              <div class="col-sm-3 col-lg-3">
+                <ul class="footer-vertical-nav">
+                  <li><a href="{% url 'aboutusfile' %}">About us</a></li>
+                  <li><a href="{% url 'contactusfile' %}">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="d-flex justify-content-between">
+                  <ul>
+
+                  </ul>
+                  <div class="d-flex justify-content-end footer-social">
+                    <h5 class="m-0 font-weight-600 mr-3 d-none d-lg-flex">Follow on</h5>
+                    <ul class="social-media">
+                      <li>
+                        <a href="#">
+                          <i class="mdi mdi-instagram"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="mdi mdi-facebook"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="mdi mdi-youtube"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="mdi mdi-linkedin"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="mdi mdi-twitter"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="d-lg-flex justify-content-between align-items-center border-top mt-5 footer-bottom">
+                  <ul class="footer-horizontal-menu"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+    </div>
+    <!-- inject:js -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="{% static 'vendors/aos/dist/aos.js/aos.js' %}"></script>
+    <script src="{% static 'vendors/owl.carousel/dist/owl.carousel.min.js' %}"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <script src="{% static  'js/demo.js' %}"></script>
+    <!-- End custom js for this page-->
+  </body>
+</html>
